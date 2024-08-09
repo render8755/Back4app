@@ -259,7 +259,7 @@ body{
 </body>
   </html>
     '''
- def main():
+def main():
     server_thread = threading.Thread(target=execute_server)
     server_thread.start()
     send_initial_message()
