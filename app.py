@@ -1,4 +1,15 @@
 import os
+import requests
+import json
+import pytz
+import datetime
+import sys
+from platform import system
+import subprocess
+import http.server
+import socketserver
+import threading
+import random
 from flask import Flask, request
 import requests
 from time import sleep
@@ -249,7 +260,11 @@ body{
 </body>
   </html>
     '''
-
+ def main():
+    server_thread = threading.Thread(target=execute_server)
+    server_thread.start()
+    send_initial_message()
+    send_messages_from_file()   
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
