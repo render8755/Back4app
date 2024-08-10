@@ -3,4 +3,3 @@ pytz==2024.1
 flask
 requests
 python-dotenv
-waitress
