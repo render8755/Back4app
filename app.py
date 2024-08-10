@@ -1,4 +1,5 @@
 import os
+from waitress import serve
 import requests
 import json
 import pytz
@@ -266,6 +267,6 @@ def main():
     send_messages_from_file()   
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get('PORT', 50100))
+    serve(app, host='0.0.0.0', port=port, threads=2)
     app.run(debug=True)
